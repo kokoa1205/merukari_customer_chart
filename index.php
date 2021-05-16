@@ -31,6 +31,5 @@ if ($stmt = $mysqli->prepare($sql)) {
     $stmt->close();
 }
 
-echo "Hello world i
-";
+echo "Hello world heroku";
 ?>
