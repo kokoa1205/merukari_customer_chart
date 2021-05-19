@@ -30,7 +30,7 @@
       <input name="name" type="text" placeholder="名前">
       <input name="message" type="text" placeholder="取引物">
       <input type="submit" name="add" value="送信">
-      <h1><a href="show2.php">表を見る </a></h1>
+      <h1><a href="show.php">表を見る </a></h1>
     </form>
   </body>
   </html>
