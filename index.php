@@ -3,7 +3,7 @@
 
 if(isset($_POST['submit'])) {
   if ($_POST['password'] == 'くるくる') {
-    header('Location: main.php'); 
+    header('Location: insert.php'); 
 
     }else{
       print("パスワードを間違えています");
