@@ -12,14 +12,18 @@ $query_builder = TRUE;
 
 // connect DB
 $conn = mysqli_connect($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
+if (mysqli_connect_errno()) {
+    die("データベースに接続できません:" . mysqli_connect_error() . "\n");
+} else {
+    echo "データベースの接続に成功しました。\n";
+}
 
 
-
-$sql = "INSERT INTO merukari_member (name, message, created) VALUES (:name, :message, now())";
-$stmt = $conn->prepare($sql);
-$params = array(':name' => '綾瀬', ':message' => 'aaa');
-$stmt->execute($params);
-echo '登録完了しました';
+// $sql = "INSERT INTO merukari_member (name, message, created) VALUES (:name, :message, now())";
+// $stmt = $conn->prepare($sql);
+// $params = array(':name' => '綾瀬', ':message' => 'aaa');
+// $stmt->execute($params);
+// echo '登録完了しました';
 
 
 echo "Hello world heroku";
