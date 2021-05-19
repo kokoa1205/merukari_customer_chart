@@ -31,7 +31,7 @@ $(function () {
       let id = $("#main").val();
       $.ajax({
         type: "POST",
-        url: "josn.php",
+        url: "json.php",
         data: { "delete": name1 },
         dataType: "json"
       }).done(function (data) {
