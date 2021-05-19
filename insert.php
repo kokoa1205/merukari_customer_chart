@@ -4,7 +4,7 @@
   require('dbconnect.php');
   date_default_timezone_set('Asia/Tokyo');
 
-  print(date());
+  print(date('Y-m-d H:i:s'));
   if(isset($_POST['add'])) {
     if (empty($_POST['time'])) {
       $sql = "INSERT INTO merukari_member (name, message,created) VALUES (:name, :message, now())";
