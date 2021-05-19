@@ -1,36 +1,36 @@
-<?php
-try {
-    $db = new PDO('mysql:host=us-cdbr-east-03.cleardb.com;dbname=heroku_2d2cba8e97d9cc4;charset=utf8','b19efb86254b6f','b400c1e5');
-    print("接続しました。");
-  } catch(PDOException $e) {
-    print('DB接続エラー:' . $e->getMessage());
+
+  <?php
+  session_start();
+  require('dbconnect.php');
+  
+  if(isset($_POST['add'])) {
+    $sql = "INSERT INTO members (name, message,created) VALUES (:name, :message, NOW())";
+    $stmt = $db->prepare($sql);
+    $params = array(':name' => $_POST['name'], ':message' => $_POST['message']);
+    $stmt->execute($params);
+    echo '登録完了しました';
   }
-
-// // Get Heroku clearDB connection information
-// $cleardb_url  = parse_url(getenv("CLEAROB_DATABASE_URL"));
-// $cleardb_server = $cleardb_url["host"];
-// $cleardb_username = $cleardb_url["user"];
-// $cleardb_password = $cleardb_url["pass"];
-// $cleardb_db = substr($cleardb_url["path"],1);
-
-// $active_group = 'default';
-// $query_builder = TRUE;
-
-// // connect DB
-// $conn = mysqli_connect($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
-// if (mysqli_connect_errno()) {
-//     die("データベースに接続できません:" . mysqli_connect_error() . "\n");
-// } else {
-//     echo "データベースの接続に成功しました。\n";
-// }
-
-
-// $sql = "INSERT INTO merukari_member (name, message, created) VALUES (:name, :message, now())";
-// $stmt = $conn->prepare($sql);
-// $params = array(':name' => '綾瀬', ':message' => 'aaa');
-// $stmt->execute($params);
-// echo '登録完了しました';
-
-
-echo "Hello world heroku";
-?>
+  
+  ?>
+  <!DOCTYPE html>
+  <html lang="ja">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Document</title>
+  </head>
+  
+  <body>
+    <form action="" method="post">
+      <input type="hidden" name="action" value="submit" />
+      <input name="name" type="text" placeholder="名前">
+      <input name="message" type="text" placeholder="取引物">
+      <input type="submit" name="add" value="送信">
+      <h1><a href="show2.php">表を見る </a></h1>
+    </form>
+  </body>
+  </html>
+  
