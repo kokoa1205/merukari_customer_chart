@@ -4,7 +4,7 @@
   require('dbconnect.php');
   
   if(isset($_POST['add'])) {
-    $sql = "INSERT INTO members (name, message,created) VALUES (:name, :message, NOW())";
+    $sql = "INSERT INTO merukari_member (name, message,created) VALUES (:name, :message, NOW())";
     $stmt = $db->prepare($sql);
     $params = array(':name' => $_POST['name'], ':message' => $_POST['message']);
     $stmt->execute($params);
