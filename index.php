@@ -13,23 +13,13 @@ $query_builder = TRUE;
 // connect DB
 $conn = mysqli_connect($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
 
-$sql = "SELECT name, message FROM merukari_member WHERE name=? AND message=?";
-if ($stmt = $conn->prepare($sql)) {
-    // 条件値をSQLにバインドする（補足参照）
-    $name = "あ";
-    $message = "おおおお";
-    $stmt->bind_param("is", $name, $message);
 
-    // 実行
-    $stmt->execute();
 
-    // 取得結果を変数にバインドする
-    $stmt->bind_result($name, $message);
-    while ($stmt->fetch()) {
-        echo "ID=$name, NAME=$message<br>"; 
-    }
-    $stmt->close();
-}
+$sql = "INSERT INTO merukari_member (name, message, created) VALUES (:name, :message, now())";
+$stmt = $dbh->prepare($sql);
+$params = array(':name' => '綾瀬', ':message' => 'aaa');
+$stmt->execute($params);
+echo '登録完了しました';
 
 
 echo "Hello world heroku";
