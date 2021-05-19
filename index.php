@@ -14,7 +14,7 @@ $query_builder = TRUE;
 $conn = mysqli_connect($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
 
 $sql = "SELECT name, message FROM merukari_member WHERE name=? AND message=?";
-if ($stmt = $mysqli->prepare($sql)) {
+if ($stmt = $conn->prepare($sql)) {
     // 条件値をSQLにバインドする（補足参照）
     $name = "あ";
     $message = "おおおお";
