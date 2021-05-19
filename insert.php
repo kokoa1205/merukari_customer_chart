@@ -1,11 +1,11 @@
 
   <?php
-  
   session_start();
   require('dbconnect.php');
   date_default_timezone_set('Asia/Tokyo');
+
+  print(date());
   if(isset($_POST['add'])) {
-    // print(now());
     if (empty($_POST['time'])) {
       $sql = "INSERT INTO merukari_member (name, message,created) VALUES (:name, :message, now())";
       $stmt = $db->prepare($sql);
