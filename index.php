@@ -16,7 +16,7 @@ $conn = mysqli_connect($cleardb_server,$cleardb_username,$cleardb_password,$clea
 
 
 $sql = "INSERT INTO merukari_member (name, message, created) VALUES (:name, :message, now())";
-$stmt = $dbh->prepare($sql);
+$stmt = $conn->prepare($sql);
 $params = array(':name' => '綾瀬', ':message' => 'aaa');
 $stmt->execute($params);
 echo '登録完了しました';
