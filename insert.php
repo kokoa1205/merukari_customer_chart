@@ -4,12 +4,11 @@
   require('dbconnect.php');
   date_default_timezone_set('Asia/Tokyo');
 
-  print(date('Y-m-d H:i:s'));
   if(isset($_POST['add'])) {
     if (empty($_POST['time'])) {
-      $sql = "INSERT INTO merukari_member (name, message,created) VALUES (:name, :message, now())";
+      $sql = "INSERT INTO merukari_member (name, message,created) VALUES (:name, :message, :created)";
       $stmt = $db->prepare($sql);
-      $params = array(':name' => $_POST['name'], ':message' => $_POST['message']);
+      $params = array(':name' => $_POST['name'], ':message' => $_POST['message'], ':created'=>date('Y-m-d H:i:s'));
       $stmt->execute($params);
       echo '登録完了しました';
     } else {
