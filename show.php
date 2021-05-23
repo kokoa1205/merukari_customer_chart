@@ -3,9 +3,9 @@ session_start();
 require('dbconnect.php');
 
 if(!empty($_SESSION['list']['id'])) {
-  $update = "UPDATE merukari_member SET created = now() WHERE id = :id";
+  $update = "UPDATE merukari_member SET created = :created WHERE id = :id";
   $update_stmt = $db->prepare($update);
-  $update_params = array(':id' => $_SESSION['list']['id']);
+  $update_params = array(':id' => $_SESSION['list']['id'], ':created' => date('Y-m-d H:i:s'));
   $update_stmt->execute($update_params);
   unset($_SESSION['list']['id']);
 }
