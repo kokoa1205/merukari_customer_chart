@@ -66,5 +66,64 @@ $stmt = $db->query($sql);
     </tbody>
     </table>
     <p id="return"></p>
+    
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <th scope="col">内容</th>
+                <th scope="col">価格(月額)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>ベーシックプラン</th>
+                <td data-label="内容" class="txt">はじめての方向け。ベーシックなお試しプラン</td>
+                <td data-label="価格" class="price">¥3,000</td>
+            </tr>
+            <tr>
+                <th>カスタムプラン</th>
+                <td data-label="内容" class="txt">必要なものだけ揃えられるカスタムプラン</td>
+                <td data-label="価格"class="price">¥4,000</td>
+            </tr>
+            <tr>
+                <th>プレミアムプラン</th>
+                <td data-label="内容" class="txt">全ておまかせのプレミアムプラン</td>
+                <td data-label="価格"class="price">¥10,000</td>
+            </tr>
+          <tr>
+                <th>ベーシックプラン</th>
+                <td data-label="内容" class="txt">はじめての方向け。ベーシックなお試しプラン</td>
+                <td data-label="価格" class="price">¥3,000</td>
+            </tr>
+            <tr>
+                <th>カスタムプラン</th>
+                <td data-label="内容" class="txt">必要なものだけ揃えられるカスタムプラン</td>
+                <td data-label="価格"class="price">¥4,000</td>
+            </tr>
+            <tr>
+                <th>プレミアムプラン</th>
+                <td data-label="内容" class="txt">全ておまかせのプレミアムプラン</td>
+                <td data-label="価格"class="price">¥10,000</td>
+            </tr>
+          <tr>
+                <th>ベーシックプラン</th>
+                <td data-label="内容" class="txt">はじめての方向け。ベーシックなお試しプラン</td>
+                <td data-label="価格" class="price">¥3,000</td>
+            </tr>
+            <tr>
+                <th>カスタムプラン</th>
+                <td data-label="内容" class="txt">必要なものだけ揃えられるカスタムプラン</td>
+                <td data-label="価格"class="price">¥4,000</td>
+            </tr>
+            <tr>
+                <th>プレミアムプラン</th>
+                <td data-label="内容" class="txt">全ておまかせのプレミアムプラン</td>
+                <td data-label="価格"class="price">¥10,000</td>
+            </tr>
+        </tbody>
+    </table>   
+
+
 </body>
 </html>
