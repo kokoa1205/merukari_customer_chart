@@ -48,7 +48,7 @@
     <input id="email" type="text" placeholder="comment" name="message">
     <input type="datetime-local" name="time">
     <input id="submit" type="submit" value="GO!" name="add">
-    <p><a href="show.php">表を見る </a></p>
+    <p><a href="show.php" class="show">表を見る </a></p>
   </form>
   </body>
   </html>

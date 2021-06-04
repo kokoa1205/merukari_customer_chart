@@ -166,3 +166,12 @@ textarea:hover {
 #submit:hover {
   color: #e2dedb;
 }
+.show {
+  font-size: large;
+  font-weight: bold;
+  color: #b3aca7;
+  text-decoration: none;
+}
+.show:hover {
+  color: #e2dedb;
+}
