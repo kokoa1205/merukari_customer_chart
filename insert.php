@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="../css/insert.css">
     <title>Document</title>
   </head>
   
@@ -41,6 +41,13 @@
       <input type="submit" name="add" value="送信">
       <h1><a href="show.php">表を見る </a></h1>
     </form>
+
+  <form id="form" class="topBefore">
+    <input id="name" type="text" placeholder="NAME">
+    <input id="email" type="text" placeholder="E-MAIL">
+    <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
+    <input id="submit" type="submit" value="GO!">
+  </form>
   </body>
   </html>
   
