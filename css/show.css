@@ -10,13 +10,13 @@ table {
   padding: 0;
   width: 650px;
   box-shadow: 0 0 15px -6px #00000073;
-  color:rgb(255, 255, 255);
+  color:#dd9a67;
 }
 table tr {
   background: #e2dedb;
 }
 table tbody tr:hover{
-  color: #b3aca7;
+  color: #ffffff;
 }
 table th,
 table td {
