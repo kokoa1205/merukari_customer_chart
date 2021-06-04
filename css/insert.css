@@ -186,5 +186,9 @@ textarea:hover {
   input {
     width: 300px;
   }
+  #submit {
+    width: 300px;
+    padding: 0;
+  }
  
 }
