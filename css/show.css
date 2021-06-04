@@ -13,10 +13,10 @@ table {
   color: #b3aca7;
 }
 table tr {
-  background-color: #fff;
+  background: #e2dedb;
 }
 table tbody tr:hover{
-  background-color: #fffae9;
+  color: #b3aca7;
 }
 table th,
 table td {
@@ -28,8 +28,8 @@ table thead th {
     padding: 1em;
 }
 table thead tr{
-  background-color: #FFC107;
-  color:#fff;
+  background: #dd9a67;
+  color:rgb(224, 207, 207);
 }
 table tbody th {
   text-align: left;
