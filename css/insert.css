@@ -170,6 +170,7 @@ textarea:hover {
   font-weight: bold;
   color: #b3aca7;
   text-decoration: none;
+  margin: 0 auto;
 }
 .show:hover {
   color: #e08e4f;

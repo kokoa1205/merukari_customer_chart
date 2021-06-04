@@ -4,21 +4,21 @@ session_start();
 require('dbconnect.php');
 date_default_timezone_set('Asia/Tokyo');
 
-// if(!empty($_SESSION['list']['id'])) {
-//   $update = "UPDATE merukari_member SET created = :created WHERE id = :id";
-//   $update_stmt = $db->prepare($update);
-//   $update_params = array(':id' => $_SESSION['list']['id'], ':created' => date('Y-m-d H:i:s'));
-//   $update_stmt->execute($update_params);
-//   unset($_SESSION['list']['id']);
-// }
-// if(!empty($_SESSION['list']['delete'])) {
-//   $delete = "DELETE FROM merukari_member WHERE id = :id";
-//   $delete_stmt = $db->prepare($delete);
-//   $delete_params = array(':id' => $_SESSION['list']['delete']);
-//   $delete_stmt->execute($delete_params);
-//   unset($_SESSION['list']['delete']);
-//   print($_SESSION['list']['delete']);
-// }
+if(!empty($_SESSION['list']['id'])) {
+  $update = "UPDATE merukari_member SET created = :created WHERE id = :id";
+  $update_stmt = $db->prepare($update);
+  $update_params = array(':id' => $_SESSION['list']['id'], ':created' => date('Y-m-d H:i:s'));
+  $update_stmt->execute($update_params);
+  unset($_SESSION['list']['id']);
+}
+if(!empty($_SESSION['list']['delete'])) {
+  $delete = "DELETE FROM merukari_member WHERE id = :id";
+  $delete_stmt = $db->prepare($delete);
+  $delete_params = array(':id' => $_SESSION['list']['delete']);
+  $delete_stmt->execute($delete_params);
+  unset($_SESSION['list']['delete']);
+  print($_SESSION['list']['delete']);
+}
 
 
 
@@ -42,10 +42,12 @@ $stmt = $db->query($sql);
   <title>Document</title>
 </head>
 <body>
-    <h1><a href="insert.php">入力画面</a></h1>
-    <input type="text" id="search"> <input type="button" value="絞り込む" id="button"> <input type="button" value="すべて表示" id="button2">
-
-   
+    <p><a href="insert.php"class="show">入力画面</a></p>
+    <div class="search">
+      <input type="text" id="search"> 
+      <input type="button" value="絞り込む" id="button"> 
+      <input type="button" value="すべて表示" id="button2">
+    </div>
 
     <table border="1">
         <thead>

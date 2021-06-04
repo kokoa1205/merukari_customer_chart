@@ -3,7 +3,19 @@ body {
   line-height: 1.25;
   background: #e2dedb;
 }
-
+.show {
+  font-size: large;
+  font-weight: bold;
+  color: #b3aca7;
+  text-decoration: none;
+}
+.show:hover {
+  color: #e08e4f;
+}
+.search {
+  width: 300px;
+  margin: 0 auto;
+}
 table {
   border-collapse: collapse;
   margin: 0 auto;
