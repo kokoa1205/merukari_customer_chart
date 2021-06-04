@@ -6,17 +6,18 @@ body {
 .show {
   font-size: large;
   font-weight: bold;
-  color: #b3aca7;
+  color:#dd9a67;
   text-decoration: none;
   width: 200px;
-  margin: 0 auto;
+  margin: 30px auto;
+  text-align: center;
 }
 .show:hover {
-  color: #e08e4f;
+  color: #ffffff;
 }
 .search {
   width: 650px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 table {
   border-collapse: collapse;
