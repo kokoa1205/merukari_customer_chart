@@ -16,6 +16,7 @@ table tr {
   background: #e2dedb;
 }
 table tbody tr:hover{
+  background:#dd9a67;
   color: #ffffff;
 }
 table th,
