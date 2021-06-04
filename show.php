@@ -50,10 +50,11 @@ $stmt = $db->query($sql);
     <table border="1">
         <thead>
             <tr>
-                <td></td>
                 <th scope="col">名前</th>
                 <th scope="col">取引物</th>
                 <th scope="col">取引日</th>
+                <th scope="col">更新</th>
+                <th scope="col">削除</th>
             </tr>
         </thead>
         <tbody>
