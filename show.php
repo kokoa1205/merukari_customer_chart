@@ -71,55 +71,18 @@ $stmt = $db->query($sql);
         <thead>
             <tr>
                 <td></td>
-                <th scope="col">内容</th>
-                <th scope="col">価格(月額)</th>
+                <th scope="col">名前</th>
+                <th scope="col">取引物</th>
+                <th scope="col">取引日</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th>ベーシックプラン</th>
-                <td data-label="内容" class="txt">はじめての方向け。ベーシックなお試しプラン</td>
-                <td data-label="価格" class="price">¥3,000</td>
-            </tr>
-            <tr>
-                <th>カスタムプラン</th>
-                <td data-label="内容" class="txt">必要なものだけ揃えられるカスタムプラン</td>
-                <td data-label="価格"class="price">¥4,000</td>
-            </tr>
-            <tr>
-                <th>プレミアムプラン</th>
-                <td data-label="内容" class="txt">全ておまかせのプレミアムプラン</td>
-                <td data-label="価格"class="price">¥10,000</td>
-            </tr>
-          <tr>
-                <th>ベーシックプラン</th>
-                <td data-label="内容" class="txt">はじめての方向け。ベーシックなお試しプラン</td>
-                <td data-label="価格" class="price">¥3,000</td>
-            </tr>
-            <tr>
-                <th>カスタムプラン</th>
-                <td data-label="内容" class="txt">必要なものだけ揃えられるカスタムプラン</td>
-                <td data-label="価格"class="price">¥4,000</td>
-            </tr>
-            <tr>
-                <th>プレミアムプラン</th>
-                <td data-label="内容" class="txt">全ておまかせのプレミアムプラン</td>
-                <td data-label="価格"class="price">¥10,000</td>
-            </tr>
-          <tr>
-                <th>ベーシックプラン</th>
-                <td data-label="内容" class="txt">はじめての方向け。ベーシックなお試しプラン</td>
-                <td data-label="価格" class="price">¥3,000</td>
-            </tr>
-            <tr>
-                <th>カスタムプラン</th>
-                <td data-label="内容" class="txt">必要なものだけ揃えられるカスタムプラン</td>
-                <td data-label="価格"class="price">¥4,000</td>
-            </tr>
-            <tr>
-                <th>プレミアムプラン</th>
-                <td data-label="内容" class="txt">全ておまかせのプレミアムプラン</td>
-                <td data-label="価格"class="price">¥10,000</td>
+                <th><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></th>
+                <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
+                <td data-label="価格" class="price"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">送信</td>
+                <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">削除</td>
             </tr>
         </tbody>
     </table>   
