@@ -77,6 +77,7 @@ $stmt = $db->query($sql);
             </tr>
         </thead>
         <tbody>
+          <?php foreach($stmt as $row): ?>
             <tr>
                 <th><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></th>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
@@ -84,6 +85,7 @@ $stmt = $db->query($sql);
                 <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">送信</td>
                 <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">削除</td>
             </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>   
 
