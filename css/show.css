@@ -8,14 +8,14 @@ body {
   font-weight: bold;
   color: #b3aca7;
   text-decoration: none;
-  width: auto;
+  width: 200px;
   margin: 0 auto;
 }
 .show:hover {
   color: #e08e4f;
 }
 .search {
-  width: auto;
+  width: 650px;
   margin: 0 auto;
 }
 table {
