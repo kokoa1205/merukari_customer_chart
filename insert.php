@@ -33,15 +33,6 @@
   </head>
   
   <body>
-    <!-- <form action="" method="post"> -->
-      <!-- <input type="hidden" name="action" value="submit" /> -->
-      <!-- <input name="name" type="text" placeholder="名前"> -->
-      <!-- <input name="message" type="text" placeholder="取引物"> -->
-      <!-- <input type="datetime-local" name="time">
-      <input type="submit" name="add" value="送信"> -->
-
-    </form>
-
   <form id="form" class="topBefore" method="post">
     <input type="hidden" name="action" value="submit" />
     <input id="name" type="text" placeholder="NAME" name="name">

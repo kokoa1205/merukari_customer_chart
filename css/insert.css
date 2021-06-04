@@ -174,3 +174,14 @@ textarea:hover {
 .show:hover {
   color: #e08e4f;
 }
+
+@media screen and (max-width:480px) {
+ 
+	/*　画面サイズが480px以下の場合ここの記述が適用される　*/
+  #form {
+    position: relative;
+    width: 300px;
+    margin: 50px auto 100px auto;
+  }
+ 
+}
