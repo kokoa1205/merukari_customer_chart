@@ -160,7 +160,7 @@ textarea:hover {
   cursor: pointer;
   
   border: solid 1px #b3aca7;
-  border-top: none;
+  /* border-top: none; */
 }
 
 #submit:hover {
