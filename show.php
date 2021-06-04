@@ -62,7 +62,7 @@ $stmt = $db->query($sql);
         <tbody>
           <?php foreach($stmt as $row): ?>
             <tr>
-                <td><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
                 <td data-label="価格" class="price"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">送信</td>
