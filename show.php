@@ -42,7 +42,7 @@ $stmt = $db->query($sql);
   <title>Document</title>
 </head>
 <body>
-    <p><a href="insert.php"class="show">入力画面</a></p>
+    <p><a href="insert.php" class="show">入力画面</a></p>
     <div class="search">
       <input type="text" id="search"> 
       <input type="button" value="絞り込む" id="button"> 
