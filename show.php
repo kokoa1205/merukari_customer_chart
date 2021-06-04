@@ -71,7 +71,7 @@ $stmt = $db->query($sql);
             <?php endforeach; ?>
         </tbody>
     </table>   
-
+    <p id="return"></p>
 
 </body>
 </html>
