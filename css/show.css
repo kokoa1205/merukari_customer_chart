@@ -1,6 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
+  background: #e2dedb;
 }
 
 table {
@@ -8,7 +9,8 @@ table {
   margin: 0 auto;
   padding: 0;
   width: 650px;
-      box-shadow: 0 0 15px -6px #00000073;
+  box-shadow: 0 0 15px -6px #00000073;
+  color: #b3aca7;
 }
 table tr {
   background-color: #fff;
