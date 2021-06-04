@@ -33,20 +33,22 @@
   </head>
   
   <body>
-    <form action="" method="post">
-      <input type="hidden" name="action" value="submit" />
-      <input name="name" type="text" placeholder="名前">
-      <input name="message" type="text" placeholder="取引物">
-      <input type="datetime-local" name="time">
-      <input type="submit" name="add" value="送信">
-      <h1><a href="show.php">表を見る </a></h1>
+    <!-- <form action="" method="post"> -->
+      <!-- <input type="hidden" name="action" value="submit" /> -->
+      <!-- <input name="name" type="text" placeholder="名前"> -->
+      <!-- <input name="message" type="text" placeholder="取引物"> -->
+      <!-- <input type="datetime-local" name="time">
+      <input type="submit" name="add" value="送信"> -->
+
     </form>
 
-  <form id="form" class="topBefore">
-    <input id="name" type="text" placeholder="NAME">
-    <input id="email" type="text" placeholder="E-MAIL">
-    <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
-    <input id="submit" type="submit" value="GO!">
+  <form id="form" class="topBefore" method="post">
+    <input type="hidden" name="action" value="submit" />
+    <input id="name" type="text" placeholder="NAME" name="name">
+    <input id="email" type="text" placeholder="comment" name="message">
+    <input type="datetime-local" name="time">
+    <input id="submit" type="submit" value="GO!" name="add">
+    <h1><a href="show.php">表を見る </a></h1>
   </form>
   </body>
   </html>
