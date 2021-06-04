@@ -49,7 +49,7 @@ $stmt = $db->query($sql);
       <input type="button" value="すべて表示" id="button2">
     </div>
 
-    <table border="1">
+    <table border="1" id="result">
         <thead>
             <tr>
                 <th scope="col">名前</th>
