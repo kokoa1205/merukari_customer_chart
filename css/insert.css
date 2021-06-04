@@ -94,7 +94,7 @@ header {
   margin: 50px auto 100px auto;
 }
 
-input, .show, p {
+input, p {
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
   width: 470px;
@@ -114,7 +114,7 @@ input, .show, p {
   -ms-transition: all 0.3s ease-in-out;
 }
 
-input:hover, .show:hover {
+input:hover, .p:hover {
   background: #b3aca7;
   color: #e2dedb;
 }
@@ -166,7 +166,7 @@ textarea:hover {
 #submit:hover {
   color: #e2dedb;
 }
-.show {
+/* .show {
   font-size: large;
   font-weight: bold;
   color: #b3aca7;
@@ -174,4 +174,4 @@ textarea:hover {
 }
 .show:hover {
   color: #e2dedb;
-}
+} */
