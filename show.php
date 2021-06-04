@@ -44,7 +44,7 @@ $stmt = $db->query($sql);
     <h1><a href="insert.php">入力画面</a></h1>
     <input type="text" id="search"> <input type="button" value="絞り込む" id="button"> <input type="button" value="すべて表示" id="button2">
 
-    <table border="1" id="result"> 
+    <!-- <table border="1" id="result"> 
     <thead>
       <tr>
         <th>名前</th>
@@ -58,15 +58,14 @@ $stmt = $db->query($sql);
         <td><?php echo $row['name']; ?></td>
          <td><?php echo $row['message']; ?></td>
         <td><?php echo $row['created']; ?></td>
-        <!-- <td><?php echo $row['created']; ?></td> -->
         <td><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">送信</td>
         <td><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">削除</td>
       </tr>
     <?php endforeach; ?>
     </tbody>
     </table>
-    <p id="return"></p>
-    
+    <p id="return"></p> -->
+
     <table>
         <thead>
             <tr>
