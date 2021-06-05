@@ -30,11 +30,11 @@ table {
   color:#fff;
 }
 table tr {
-  background: #e2dedb;
+  background: #000000;
 }
 table tbody tr:hover{
   background:#dd9a67;
-  color: #000000;
+  color: #fff;
 }
 table th,
 table td {
