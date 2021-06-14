@@ -72,14 +72,14 @@ $(function(){
 
 $(function(){
 	$('#time-search').bind("click",function(){
-    var time = new Array();
+    var ascArray = new Array();
     $('#result tbody tr').each(function(){
       time = $(this).find("td:eq(2)").html();
       console.log(time);
-      var ascArray = [...time].sort((a, b) => new Date(a) - new Date(b));
-      console.log(ascArray);
-		});
+      ascArray = [...time].sort((a, b) => new Date(a) - new Date(b));
 
+		});
+    console.log(ascArray);
 
 
 	});
