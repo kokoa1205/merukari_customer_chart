@@ -71,7 +71,7 @@ $(function(){
 });
 
 $(function(){
-	$('#time-sarch').bind("click",function(){
+	$('#time-search').bind("click",function(){
 
 	console.log("A");
 	});
