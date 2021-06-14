@@ -154,8 +154,7 @@ textarea:hover {
   
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
-  /* color: #b3aca7; */
-  color: red;
+  color: #b3aca7;
   
   outline:none;
   cursor: pointer;
@@ -174,7 +173,8 @@ textarea:hover {
   margin: 0 auto;
 }
 .show:hover {
-  color: #e08e4f;
+  /* color: #e08e4f; */
+  color:blue;
 }
 
 @media screen and (max-width:480px) {
