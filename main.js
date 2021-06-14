@@ -52,6 +52,7 @@ $(function () {
 
 $(function(){
 	$('#button').bind("click",function(){
+    console.log("A");
 		var re = new RegExp($('#search').val());
 		$('#result tbody tr').each(function(){
 			var txt = $(this).find("td:eq(0)").html();
