@@ -20,6 +20,9 @@ if(!empty($_SESSION['list']['delete'])) {
   print($_SESSION['list']['delete']);
 }
 
+if (isset($_POST['time'])) {
+  print("A");
+}
 
 
 $row_count = [];
@@ -47,7 +50,9 @@ $stmt = $db->query($sql);
       <input type="text" id="search" placeholder="検索ワード"> 
       <input type="button" value="絞り込む" id="button"> 
       <input type="button" value="すべて表示" id="button2">
-      <input type="button" value="時間で絞り込む" id="time-search">
+      <form method="post">
+      <input type="button" value="時間で絞り込む" id="time-search" name="time">
+      </form>
     </div>
     <div class="time-search">
 
