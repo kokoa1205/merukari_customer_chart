@@ -21,7 +21,7 @@ if(!empty($_SESSION['list']['delete'])) {
 }
 
 if (isset($_POST['time'])) {
-  $time_sql = "SELECT * FROM merukari_member ORDER BY name";
+  $time_sql = "SELECT * FROM merukari_member ORDER BY created";
   $time_stmt = $db->query($time_sql);
 }
 
