@@ -74,10 +74,8 @@ $(function(){
 	$('#time-search').bind("click",function(){
     $('#result tbody tr').each(function(){
       var time = $(this).find("td:eq(2)").html();
-      time.sort(function(a, b) {
-        return a - b;    //a-bは昇順、b-aは降順となる
-     });
-      console.log(time);
+      const ascArray = [...time].sort((a, b) => new Date(a) - new Date(b));
+      console.log(ascArray);
 		});
 
 	});
