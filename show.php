@@ -21,7 +21,8 @@ if(!empty($_SESSION['list']['delete'])) {
 }
 
 if (isset($_POST['time'])) {
-  print("A");
+  $sql = "SELECT * FROM merukari_member ORDER BY created";
+$stmt = $db->query($sql);
 }
 
 
