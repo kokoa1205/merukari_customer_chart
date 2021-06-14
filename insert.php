@@ -28,15 +28,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../css/insert.css"> -->
     <link rel="stylesheet" href="../css/insert.css">
     <title>Document</title>
   </head>
   
   <body>
   <style>
-  .show:hover {
-  /* color: #e08e4f; */
-  color:blue;
+#submit {
+  width: 500px;
+  
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+  
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  color: #b3aca7;
+  
+  outline:none;
+  cursor: pointer;
+  
+  border: solid 1px #b3aca7;
 }
   </style>
   <form id="form" class="topBefore" method="post">

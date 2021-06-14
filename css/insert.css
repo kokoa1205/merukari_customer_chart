@@ -173,8 +173,7 @@ textarea:hover {
   margin: 0 auto;
 }
 .show:hover {
-  /* color: #e08e4f; */
-  color:blue;
+  color: #e08e4f;
 }
 
 @media screen and (max-width:480px) {
