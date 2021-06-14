@@ -21,8 +21,8 @@ if(!empty($_SESSION['list']['delete'])) {
 }
 
 if (isset($_POST['time'])) {
-  $sql = "SELECT * FROM merukari_member ";
-  $stmt = $db->query($sql);
+  $time_sql = "SELECT * FROM merukari_member ORDER BY name";
+  $time_stmt = $db->query($sql);
 }
 
 
@@ -77,6 +77,29 @@ $stmt = $db->query($sql);
                 <td data-label="価格" class="price"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">送信</td>
                 <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">削除</td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>   
+
+    <table border="1" id="time-result">
+        <thead>
+            <tr>
+                <th scope="col">名前</th>
+                <th scope="col">取引物</th>
+                <th scope="col">取引日</th>
+                <th scope="col">更新</th>
+                <th scope="col">削除</th>
+            </tr>
+        </thead>
+        <tbody>
+          <?php foreach($time_stmt as $time_row): ?>
+            <tr>
+                <td data-label="内容" class="txt"><?php htmlspecialchars(print($time_row['name']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt"><?php htmlspecialchars(print($time_row['message']), ENT_QUOTES); ?></td>
+                <td data-label="価格" class="price"><?php htmlspecialchars(print($time_row['created']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php htmlspecialchars(print($time_row['id']), ENT_QUOTES); ?>">送信</td>
+                <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php htmlspecialchars(print($time_row['id']), ENT_QUOTES); ?>">削除</td>
             </tr>
             <?php endforeach; ?>
         </tbody>
