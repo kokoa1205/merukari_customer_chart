@@ -72,7 +72,7 @@ $(function(){
 
 $(function(){
 	$('#time-search').bind("click",function(){
-    var time = $(this).find("td:eq(3)").html();
+    var time = $(this).find("td:eq(2)").html();
     console.log(time);
 
 	});
