@@ -72,8 +72,8 @@ $(function(){
 
 $(function(){
 	$('#time-search').bind("click",function(){
-
-	console.log("A");
+    var time = document.getElementById("time");
+    console.log(time);
 	});
 });
 
