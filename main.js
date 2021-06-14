@@ -76,7 +76,8 @@ $(function(){
     $('#result tbody tr').each(function(){
       time.push($(this).find("td:eq(2)").html());
 		});
-    console.log(time);
+    const time_sort = [...time].sort((a, b) => new Date(a) - new Date(b));
+    console.log(time_sort);
 
 	});
 });
