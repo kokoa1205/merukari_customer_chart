@@ -68,9 +68,9 @@ $stmt = $db->query($sql);
             <tr>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
-                <td data-label="価格" class="price" id="time"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
-                <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">送信</td>
-                <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">削除</td>
+                <td data-label="価格" class="price"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">送信</td>
+                <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">削除</td>
             </tr>
             <?php endforeach; ?>
         </tbody>
