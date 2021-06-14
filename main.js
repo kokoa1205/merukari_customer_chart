@@ -72,17 +72,11 @@ $(function(){
 
 $(function(){
 	$('#time-search').bind("click",function(){
-    var ascArray = new Array();
+    var time = [];
     $('#result tbody tr').each(function(){
-      time = $(this).find("td:eq(2)").html();
-      console.log(time);
-      ascArray = [...time].sort((a, b) => new Date(a) - new Date(b));
-
+      time.push($(this).find("td:eq(2)").html());
 		});
-    for (var i=0; i<stockColors.length; i++){
-      console.log(ascArray[i]); //ここにpush()がくる
-    }
-
+    console.log(time);
 
 	});
 });
