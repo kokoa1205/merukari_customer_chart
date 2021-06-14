@@ -47,6 +47,7 @@ $stmt = $db->query($sql);
       <input type="text" id="search" placeholder="検索ワード"> 
       <input type="button" value="絞り込む" id="button"> 
       <input type="button" value="すべて表示" id="button2">
+      <input type="button" value="時間で絞り込む" id="time-search">
     </div>
     <div class="time-search">
 
@@ -67,7 +68,7 @@ $stmt = $db->query($sql);
             <tr>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
-                <td data-label="価格" class="price"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
+                <td data-label="価格" class="price" id="time"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">送信</td>
                 <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php echo $row['id']; ?>">削除</td>
             </tr>

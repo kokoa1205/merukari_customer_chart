@@ -36,11 +36,12 @@ $(function () {
         dataType: "json"
       }).done(function (data) {
         // $("#return").append('<p>'+data.id);
+        console.log('削除しました');
       }).fail(function (XMLHttpRequest, status, e) {
         alert(e);
       });
+
       location.reload();
-      console.log('削除しました');
     } else {
       console.log('削除をとりやめました');
     }
@@ -65,6 +66,13 @@ $(function(){
 	$('#button2').bind("click",function(){
 		$('#search').val('');
 		$('#result tr').show();
+	});
+});
+
+$(function(){
+	$('#time-sarch').bind("click",function(){
+
+	console.log("A");
 	});
 });
 
