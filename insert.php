@@ -55,7 +55,7 @@
     <input type="hidden" name="action" value="submit" />
     <input id="name" type="text" placeholder="NAME" name="name">
     <input id="email" type="text" placeholder="comment" name="message">
-    <input type="datetime-local" name="time">
+    <input id="name" type="datetime-local" name="time">
     <input id="submit" type="submit" value="GO!" name="add">
     <p><a href="show.php" class="show">表を見る </a></p>
   </form>
