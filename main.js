@@ -72,8 +72,10 @@ $(function(){
 
 $(function(){
 	$('#time-search').bind("click",function(){
-    var time = $(this).find("td:eq(0)").html();
-    console.log(time);
+    $('#result tbody tr').each(function(){
+      var time = $(this).find("td:eq(0)").html();
+      console.log(time);
+		});
 
 	});
 });
