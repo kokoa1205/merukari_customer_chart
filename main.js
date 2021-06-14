@@ -80,7 +80,7 @@ $(function(){
     // console.log(time_sort);
     // time_sort.show();
     $('#result tr').hide();
-    $('#time-result tr').show();
+    // $('#time-result tr').show();
 	});
 });
 
