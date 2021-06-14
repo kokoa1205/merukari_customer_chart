@@ -44,10 +44,7 @@ $(function () {
     } else {
       console.log('削除をとりやめました');
     }
-
-
   });
-
 });
 
 
