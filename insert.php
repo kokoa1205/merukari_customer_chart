@@ -39,7 +39,7 @@
   width: 500px;
   
   padding: 0;
-  margin: -5px 0px 0px 0px;
+  margin: -10px 0px 0px 0px;
   
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
