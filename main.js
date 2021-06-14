@@ -70,17 +70,17 @@ $(function(){
 	});
 });
 
-$(function(){
-	$('#time-search').bind("click",function(){
-    var time = [];
-    $('#result tbody tr').each(function(){
-      time.push($(this).find("td:eq(2)").html());
-		});
-    const time_sort = [...time].sort((a, b) => new Date(a) - new Date(b));
-    console.log(time_sort);
-    time_sort.show();
-	});
-});
+// $(function(){
+// 	$('#time-search').bind("click",function(){
+//     var time = [];
+//     $('#result tbody tr').each(function(){
+//       time.push($(this).find("td:eq(2)").html());
+// 		});
+//     const time_sort = [...time].sort((a, b) => new Date(a) - new Date(b));
+//     console.log(time_sort);
+//     time_sort.show();
+// 	});
+// });
 
 
 
