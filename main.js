@@ -79,7 +79,9 @@ $(function(){
       ascArray = [...time].sort((a, b) => new Date(a) - new Date(b));
 
 		});
-    console.log(ascArray);
+    for (var i=0; i<stockColors.length; i++){
+      console.log(ascArray[i]); //ここにpush()がくる
+    }
 
 
 	});
