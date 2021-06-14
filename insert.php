@@ -50,13 +50,16 @@
   
   border: solid 1px #b3aca7;
 }
+#time {
+  border: solid 1px #b3aca7;
+}
   </style>
   <form id="form" class="topBefore" method="post">
     <input type="hidden" name="action" value="submit" />
     <input id="name" type="text" placeholder="NAME" name="name">
     <input id="email" type="text" placeholder="comment" name="message">
     <input id="time" type="datetime-local" name="time">
-    <input id="" type="submit" value="GO!" name="add">
+    <input id="submit" type="submit" value="GO!" name="add">
     <p><a href="show.php" class="show">表を見る </a></p>
   </form>
   </body>
