@@ -49,6 +49,11 @@
   cursor: pointer;
   
   border: solid 1px #b3aca7;
+
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
 }
   </style>
   <form id="form" class="topBefore" method="post">
@@ -56,7 +61,7 @@
     <input id="name" type="text" placeholder="NAME" name="name">
     <input id="email" type="text" placeholder="comment" name="message">
     <input id="name" type="datetime-local" name="time">
-    <input id="name" type="submit" value="GO!" name="add">
+    <input id="submit" type="submit" value="GO!" name="add">
     <p><a href="show.php" class="show">表を見る </a></p>
   </form>
   </body>
