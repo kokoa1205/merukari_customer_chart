@@ -72,8 +72,8 @@ $(function(){
 
 $(function(){
 	$('#time-search').bind("click",function(){
+    var time = new Array();
     $('#result tbody tr').each(function(){
-      var time = new Array();
       time = $(this).find("td:eq(2)").html();
       console.log(time);
 		});
