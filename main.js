@@ -75,10 +75,9 @@ $(function(){
     $('#result tbody tr').each(function(){
       var time = new Array();
       time = $(this).find("td:eq(2)").html();
-
 		});
-    const ascArray = [...time].sort((a, b) => new Date(a) - new Date(b));
-    console.log(ascArray);
+    // const ascArray = [...time].sort((a, b) => new Date(a) - new Date(b));
+    console.log(time);
 
 	});
 });
