@@ -78,7 +78,7 @@ $(function(){
 		});
     const time_sort = [...time].sort((a, b) => new Date(a) - new Date(b));
     console.log(time_sort);
-
+    $(time_sort).show();
 	});
 });
 
