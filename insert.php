@@ -33,6 +33,12 @@
   </head>
   
   <body>
+  <style>
+  .show:hover {
+  /* color: #e08e4f; */
+  color:blue;
+}
+  </style>
   <form id="form" class="topBefore" method="post">
     <input type="hidden" name="action" value="submit" />
     <input id="name" type="text" placeholder="NAME" name="name">
