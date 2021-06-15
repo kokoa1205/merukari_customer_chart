@@ -55,6 +55,13 @@ $stmt = $db->query($sql);
   .search {
     width: 200px;
   }
+  table th,
+table td {
+  padding: 0;
+}
+table thead th {
+    padding: 0;
+}
 }
 </style>
     <p><a href="insert.php" class="show">入力画面</a></p>
