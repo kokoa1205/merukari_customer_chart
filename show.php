@@ -59,7 +59,7 @@ $stmt = $db->query($sql);
 
     </div>
 
-    <?php if(isset(($_POST['time']))): ?>
+    <?php if(isset($_POST['time'])): ?>
       <table border="1" id="time-result">
         <thead>
             <tr>
