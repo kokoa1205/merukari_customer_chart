@@ -57,18 +57,18 @@ $stmt = $db->query($sql);
   }
   table th,
 table td {
-  padding: 10px;
+  padding: 5px;
 }
 table thead th {
-    padding: 10px;
+    padding: 5px;
 }
 table tbody th {
   text-align: left;
-  font-size: .5em;
+  font-size: .6em;
 }
 .txt{
    text-align: left;
-   font-size: .40em;
+   font-size: .50em;
 }
 }
 </style>
