@@ -84,6 +84,12 @@ $(function(){
 	});
 });
 
+$(function(){
+	$('.alart').bind("click",function(){
+    console.log("A");
+	});
+});
+
 
 
 

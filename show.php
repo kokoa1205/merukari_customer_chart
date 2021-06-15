@@ -29,14 +29,12 @@ if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
 $row_count = [];
 $stmt = $db->query($sql);
 if (isset($_POST['a'])) {
-  // ①変数に表示させたいテキストメッセージを代入する
-$alert_message = "これはalertです。";
- 
-// ②$alertにjavascriptのalert関数と変数を組み合わせて代入する
-$alert = "<script type='text/javascript'>alert('".$alert_message."');</script>";
- 
-// ③echoで②を表示する
-echo $alert;
+  $alart = "SELECT * FROM merukari_member WHERE id=:id";
+  $alart_stmt = $db->prepare($alart);
+  $alart_params = array(':id' => $_SESSION['list']['alart']);
+
+  $alert = "<script type='text/javascript'>alert('".$alert_message."');</script>";
+  echo $alert;
 }
 
 
@@ -99,7 +97,7 @@ echo $alert;
         <tbody>
           <?php foreach($stmt as $row): ?>
             <tr>
-                <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt" onclick="alart"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
                 <td data-label="価格" class="txt"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">送信</td>
