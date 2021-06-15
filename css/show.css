@@ -65,7 +65,7 @@ table tbody th {
 }
 @media screen and (max-width: 480px) {
   table{
-    width: 80%;
+    width: 300px;
     margin: 20px;
   }
 }
