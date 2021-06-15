@@ -52,6 +52,9 @@ $stmt = $db->query($sql);
     width: 100px;
     margin: 20px;
   }
+  .search {
+    width: 200px;
+  }
 }
 </style>
     <p><a href="insert.php" class="show">入力画面</a></p>
