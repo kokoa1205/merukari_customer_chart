@@ -59,30 +59,8 @@ $stmt = $db->query($sql);
 
     </div>
 
-    <table border="1" id="result">
-        <thead>
-            <tr>
-                <th scope="col">名前</th>
-                <th scope="col">取引物</th>
-                <th scope="col">取引日</th>
-                <th scope="col">更新</th>
-                <th scope="col">削除</th>
-            </tr>
-        </thead>
-        <tbody>
-          <?php foreach($stmt as $row): ?>
-            <tr>
-                <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
-                <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
-                <td data-label="価格" class="price"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
-                <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">送信</td>
-                <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">削除</td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>   
-
-    <table border="1" id="time-result">
+    <?php if(isset(($_POST['time']))): ?>
+      <table border="1" id="time-result">
         <thead>
             <tr>
                 <th scope="col">名前</th>
@@ -104,6 +82,30 @@ $stmt = $db->query($sql);
             <?php endforeach; ?>
         </tbody>
     </table>   
+  <?php else: ?>
+    <table border="1" id="result">
+        <thead>
+            <tr>
+                <th scope="col">名前</th>
+                <th scope="col">取引物</th>
+                <th scope="col">取引日</th>
+                <th scope="col">更新</th>
+                <th scope="col">削除</th>
+            </tr>
+        </thead>
+        <tbody>
+          <?php foreach($stmt as $row): ?>
+            <tr>
+                <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
+                <td data-label="価格" class="price"><?php htmlspecialchars(print($row['created']), ENT_QUOTES); ?></td>
+                <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">送信</td>
+                <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php htmlspecialchars(print($row['id']), ENT_QUOTES); ?>">削除</td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>  
+  <?php endif; ?>
     <p id="return"></p>
 
 </body>
