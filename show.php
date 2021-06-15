@@ -62,6 +62,14 @@ table td {
 table thead th {
     padding: 10px;
 }
+table tbody th {
+  text-align: left;
+  font-size: .5em;
+}
+.txt{
+   text-align: left;
+   font-size: .40em;
+}
 }
 </style>
     <p><a href="insert.php" class="show">入力画面</a></p>
