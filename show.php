@@ -20,14 +20,13 @@ if(!empty($_SESSION['list']['delete'])) {
   print($_SESSION['list']['delete']);
 }
 
-if (isset($_POST['time'])) {
-  $time_sql = "SELECT * FROM merukari_member ORDER BY created";
-  $time_stmt = $db->query($time_sql);
-}
-
-
-$row_count = [];
 $sql = "SELECT * FROM merukari_member ORDER BY name";
+if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
+  //降順に並び替えるSQL文に変更
+  $sql = str_replace('name', '', $sql);
+  $sql = $sql . " created";
+}
+$row_count = [];
 $stmt = $db->query($sql);
 
 
@@ -52,37 +51,32 @@ $stmt = $db->query($sql);
       <input type="button" value="絞り込む" id="button"> 
       <input type="button" value="すべて表示" id="button2">
       <form method="post">
-      <input type="button" value="時間で絞り込む" id="time-search" name="time">
+              <!--
+        昇順を指定するラジオボタン
+        -->
+        <input type="radio" name="sort" value="asc" 
+        <?php
+          //降順に指定されていない時はチェックする
+          if( !isset($_POST["sort"]) || $_POST["sort"] != "desc"){
+            echo "checked";
+          }
+        ?> >昇順
+        <!--
+        降順を指定するラジオボタン
+        -->
+        <input type="radio" name="sort" value="desc" 
+      <?php
+        //降順に指定されている時はチェックする
+        if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
+          echo "checked";
+        } 
+      ?> >降順
+      <input type="submit" value="並び替え">
       </form>
     </div>
     <div class="time-search">
 
     </div>
-
-    <?php if(isset($_POST['time'])): ?>
-      <table border="1" id="time-result">
-        <thead>
-            <tr>
-                <th scope="col">名前</th>
-                <th scope="col">取引物</th>
-                <th scope="col">取引日</th>
-                <th scope="col">更新</th>
-                <th scope="col">削除</th>
-            </tr>
-        </thead>
-        <tbody>
-          <?php foreach($time_stmt as $time_row): ?>
-            <tr>
-                <td data-label="内容" class="txt"><?php htmlspecialchars(print($time_row['name']), ENT_QUOTES); ?></td>
-                <td data-label="内容" class="txt"><?php htmlspecialchars(print($time_row['message']), ENT_QUOTES); ?></td>
-                <td data-label="価格" class="price"><?php htmlspecialchars(print($time_row['created']), ENT_QUOTES); ?></td>
-                <td data-label="内容" class="txt"><button type="button" class="selectBtn"><input type="hidden" name="name" value="<?php htmlspecialchars(print($time_row['id']), ENT_QUOTES); ?>">送信</td>
-                <td data-label="内容" class="txt"><button type="button" class="deleteBtn" onclick="return"><input type="hidden" name="name" value="<?php htmlspecialchars(print($time_row['id']), ENT_QUOTES); ?>">削除</td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>   
-  <?php else: ?>
     <table border="1" id="result">
         <thead>
             <tr>
@@ -105,7 +99,6 @@ $stmt = $db->query($sql);
             <?php endforeach; ?>
         </tbody>
     </table>  
-  <?php endif; ?>
     <p id="return"></p>
 
 </body>
