@@ -65,7 +65,26 @@ table tbody th {
 }
 @media screen and (max-width: 480px) {
   table{
-    width: 300px;
-    margin: 20px;
+    width: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
+  .search {
+    width: 200px;
+  }
+  table th,
+table td {
+  padding: 5px;
+}
+table thead th {
+    padding: 5px;
+}
+table tbody th {
+  text-align: left;
+  font-size: .7em;
+}
+.txt{
+   text-align: left;
+   font-size: .70em;
+}
 }

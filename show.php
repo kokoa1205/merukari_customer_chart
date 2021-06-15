@@ -28,6 +28,16 @@ if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
 }
 $row_count = [];
 $stmt = $db->query($sql);
+if (isset($_POST['a'])) {
+  // ①変数に表示させたいテキストメッセージを代入する
+$alert_message = "これはalertです。";
+ 
+// ②$alertにjavascriptのalert関数と変数を組み合わせて代入する
+$alert = "<script type='text/javascript'>alert('".$alert_message."');</script>";
+ 
+// ③echoで②を表示する
+echo $alert;
+}
 
 
 // 下に書いてもいいけどstmtを被らせないようにする
@@ -46,33 +56,6 @@ $stmt = $db->query($sql);
   <title>Document</title>
 </head>
 <body>
-<style>
-@media screen and (max-width: 480px) {
-  table{
-    width: 100px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .search {
-    width: 200px;
-  }
-  table th,
-table td {
-  padding: 5px;
-}
-table thead th {
-    padding: 5px;
-}
-table tbody th {
-  text-align: left;
-  font-size: .7em;
-}
-.txt{
-   text-align: left;
-   font-size: .70em;
-}
-}
-</style>
     <p><a href="insert.php" class="show">入力画面</a></p>
     <div class="search">
       <input type="text" id="search" placeholder="検索ワード"> 
