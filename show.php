@@ -20,7 +20,7 @@ if(!empty($_SESSION['list']['delete'])) {
   print($_SESSION['list']['delete']);
 }
 
-$sql = "SELECT * FROM merukari_member ORDER BY name";
+$sql = "SELECT * FROM merukari_member ORDER BY message";
 if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
   //降順に並び替えるSQL文に変更
   $sql = str_replace('name', '', $sql);
