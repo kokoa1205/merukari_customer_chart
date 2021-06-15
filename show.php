@@ -50,29 +50,27 @@ $stmt = $db->query($sql);
       <input type="text" id="search" placeholder="検索ワード"> 
       <input type="button" value="絞り込む" id="button"> 
       <input type="button" value="すべて表示" id="button2">
+      
       <form method="post">
-              <!--
-        昇順を指定するラジオボタン
-        -->
+              <!-- 昇順を指定するラジオボタン -->
         <input type="radio" name="sort" value="asc" 
         <?php
           //降順に指定されていない時はチェックする
           if( !isset($_POST["sort"]) || $_POST["sort"] != "desc"){
             echo "checked";
           }
-        ?> >昇順
-        <!--
-        降順を指定するラジオボタン
-        -->
+        ?> >名前順
+        <!-- 降順を指定するラジオボタン -->
         <input type="radio" name="sort" value="desc" 
       <?php
         //降順に指定されている時はチェックする
         if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
           echo "checked";
         } 
-      ?> >降順
+      ?> >時間順
       <input type="submit" value="並び替え">
       </form>
+
     </div>
     <div class="time-search">
 
