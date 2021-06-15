@@ -64,11 +64,11 @@ table thead th {
 }
 table tbody th {
   text-align: left;
-  font-size: .8em;
+  font-size: .7em;
 }
 .txt{
    text-align: left;
-   font-size: .75em;
+   font-size: .70em;
 }
 }
 </style>
