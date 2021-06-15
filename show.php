@@ -52,7 +52,7 @@ $stmt = $db->query($sql);
       <input type="button" value="絞り込む" id="button"> 
       <input type="button" value="すべて表示" id="button2">
       <form method="post">
-      <input type="submit" value="時間で絞り込む" id="time-search" name="time">
+      <input type="button" value="時間で絞り込む" id="time-search" name="time">
       </form>
     </div>
     <div class="time-search">
