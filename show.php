@@ -50,7 +50,8 @@ $stmt = $db->query($sql);
 @media screen and (max-width: 480px) {
   table{
     width: 100px;
-    margin: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   .search {
     width: 200px;
