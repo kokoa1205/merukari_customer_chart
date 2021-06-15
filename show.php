@@ -45,12 +45,20 @@ $stmt = $db->query($sql);
   <title>Document</title>
 </head>
 <body>
+<style>
+@media screen and (max-width: 480px) {
+  table{
+    width: 300px;
+    margin: 20px;
+  }
+}
+</style>
     <p><a href="insert.php" class="show">入力画面</a></p>
     <div class="search">
       <input type="text" id="search" placeholder="検索ワード"> 
       <input type="button" value="絞り込む" id="button"> 
       <input type="button" value="すべて表示" id="button2">
-      
+
       <form method="post">
               <!-- 昇順を指定するラジオボタン -->
         <input type="radio" name="sort" value="asc" 
