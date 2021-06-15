@@ -64,5 +64,5 @@ table tbody th {
   font-weight: bold;
 }
 @media screen and (max-width: 480px) {
-  table{width: 100%;}
+  table{width: 80%;}
 }
