@@ -20,6 +20,7 @@ if(!empty($_SESSION['list']['delete'])) {
   print($_SESSION['list']['delete']);
 }
 
+
 $sql = "SELECT * FROM merukari_member ORDER BY name";
 if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
   //降順に並び替えるSQL文に変更
