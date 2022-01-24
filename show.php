@@ -52,9 +52,7 @@ foreach ($stmt as $target) {
 // var_dump($name);
 
 for ($i = 0;$i<count($name);$i++) {
-  echo $name[$i]['name'];
   for ($j = $i+1;$j<count($name);$j++) {
-    echo $name[$j]['name'];
     if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$i]['message']) {
       // $delete = "DELETE FROM merukari_member WHERE id = :id";
       // $delete_stmt = $db->prepare($delete);
