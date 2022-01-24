@@ -66,7 +66,7 @@ for ($i = 0;$i<count($name);$i++) {
     }
   }
   for ($k = 0;$k <count($delete_index);$k++) {
-    unset($name[$delete_index]);
+    unset($name[$delete_index[$k]]);
   }
 }
 // echo $stmt[0];
