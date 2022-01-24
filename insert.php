@@ -18,7 +18,7 @@
       $stmt->execute($params);
       // echo '登録完了しました';
     }
-    header('Location: ./insert.php');
+    header('Location: ./');
     exit;
   }
   
