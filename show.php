@@ -67,6 +67,7 @@ for ($i = 0;$i<count($name);$i++) {
     }
     break;
   }
+  break;
 }
 // echo $stmt[0];
 ?>
