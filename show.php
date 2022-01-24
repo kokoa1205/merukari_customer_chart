@@ -53,8 +53,7 @@ foreach ($stmt as $target) {
 $delete_index = array();
 for ($i = 0;$i<count($name);$i++) {
     for ($j = $i+1;$j<count($name);$j++) {
-      echo date($name[$j]['created'], strtotime("-1 day"));
-        if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created']-1 && $name[$i]['message'] == $name[$j]['message']) {
+        if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == date($name[$j]['created'], strtotime("-1 day")) && $name[$i]['message'] == $name[$j]['message']) {
             // try {
             //     $delete = "DELETE FROM merukari_member WHERE id = :id";
             //     $delete_stmt = $db->prepare($delete);
