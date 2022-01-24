@@ -53,6 +53,7 @@ foreach ($stmt as $target) {
 $delete_index = array();
 for ($i = 0;$i<count($name);$i++) {
     for ($j = $i+1;$j<count($name);$j++) {
+      echo $name[$j]['created']-1;
         if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created']-1 && $name[$i]['message'] == $name[$j]['message']) {
             // try {
             //     $delete = "DELETE FROM merukari_member WHERE id = :id";
