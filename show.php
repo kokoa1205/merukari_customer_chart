@@ -1,41 +1,41 @@
 <!-- git push heroku master -->
-<?php 
+<?php
 session_start();
 
 require('dbconnect.php');
 date_default_timezone_set('Asia/Tokyo');
 
-if(!empty($_SESSION['list']['id'])) {
-  $update = "UPDATE merukari_member SET created = :created WHERE id = :id";
-  $update_stmt = $db->prepare($update);
-  $update_params = array(':id' => $_SESSION['list']['id'], ':created' => date('Y-m-d H:i:s'));
-  $update_stmt->execute($update_params);
-  unset($_SESSION['list']['id']);
+if (!empty($_SESSION['list']['id'])) {
+    $update = "UPDATE merukari_member SET created = :created WHERE id = :id";
+    $update_stmt = $db->prepare($update);
+    $update_params = array(':id' => $_SESSION['list']['id'], ':created' => date('Y-m-d H:i:s'));
+    $update_stmt->execute($update_params);
+    unset($_SESSION['list']['id']);
 }
-if(!empty($_SESSION['list']['delete'])) {
-  $delete = "DELETE FROM merukari_member WHERE id = :id";
-  $delete_stmt = $db->prepare($delete);
-  $delete_params = array(':id' => $_SESSION['list']['delete']);
-  $delete_stmt->execute($delete_params);
-  unset($_SESSION['list']['delete']);
-  print($_SESSION['list']['delete']);
+if (!empty($_SESSION['list']['delete'])) {
+    $delete = "DELETE FROM merukari_member WHERE id = :id";
+    $delete_stmt = $db->prepare($delete);
+    $delete_params = array(':id' => $_SESSION['list']['delete']);
+    $delete_stmt->execute($delete_params);
+    unset($_SESSION['list']['delete']);
+    print($_SESSION['list']['delete']);
 }
 
 $sql = "SELECT * FROM merukari_member ORDER BY created desc";
-if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
-  //降順に並び替えるSQL文に変更
-  $sql = str_replace('name', '', $sql);
-  $sql = $sql . " created";
+if (isset($_POST["sort"]) && $_POST["sort"] == "desc") {
+    //降順に並び替えるSQL文に変更
+    $sql = str_replace('name', '', $sql);
+    $sql = $sql . " created";
 }
 $row_count = [];
 $stmt = $db->query($sql);
 if (isset($_POST['a'])) {
-  $alart = "SELECT * FROM merukari_member WHERE id=:id";
-  $alart_stmt = $db->prepare($alart);
-  $alart_params = array(':id' => $_SESSION['list']['alart']);
+    $alart = "SELECT * FROM merukari_member WHERE id=:id";
+    $alart_stmt = $db->prepare($alart);
+    $alart_params = array(':id' => $_SESSION['list']['alart']);
 
-  $alert = "<script type='text/javascript'>alert('".$alert_message."');</script>";
-  echo $alert;
+    $alert = "<script type='text/javascript'>alert('".$alert_message."');</script>";
+    echo $alert;
 }
 
 
@@ -43,28 +43,32 @@ if (isset($_POST['a'])) {
 $count = 0;
 $name = array();
 foreach ($stmt as $target) {
-  $name[$count]['id'] = $target['id'];
-  $name[$count]['name'] = $target['name'];
-  $name[$count]['message'] = $target['message'];
-  $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'],' '));
-  $count++;
+    $name[$count]['id'] = $target['id'];
+    $name[$count]['name'] = $target['name'];
+    $name[$count]['message'] = $target['message'];
+    $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'], ' '));
+    $count++;
 }
 // var_dump($name);
 $delete_index = array();
 for ($i = 0;$i<count($name);$i++) {
-  for ($j = $i+1;$j<count($name);$j++) {
-    if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$j]['message']) {
-      // $delete = "DELETE FROM merukari_member WHERE id = :id";
-      // $delete_stmt = $db->prepare($delete);
-      // $delete_params = array(':id' => $_SESSION['list']['delete']);
-      // $delete_stmt->execute($delete_params);
-      $delete_index[$delete_count] = $j;
-      echo $name[$j]['name'];
-      echo $name[$j]['created'];
-      echo '|';
-      $delete_count++;
+    for ($j = $i+1;$j<count($name);$j++) {
+        if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$j]['message']) {
+            try {
+                $delete = "DELETE FROM merukari_member_second WHERE id = :id";
+                $delete_stmt = $db->prepare($delete);
+                $delete_params = array(':id' => $name['id']);
+                $delete_stmt->execute($delete_params);
+            } catch (Exception $ex) {
+            }
+      
+            $delete_index[$delete_count] = $j;
+            echo $name[$j]['name'];
+            echo $name[$j]['created'];
+            echo '|';
+            $delete_count++;
+        }
     }
-  }
 }
 // echo $stmt[0];
 ?>
@@ -90,15 +94,15 @@ for ($i = 0;$i<count($name);$i++) {
       <form method="post">
         <input type="radio" name="sort" value="asc" 
         <?php
-          if( !isset($_POST["sort"]) || $_POST["sort"] != "desc"){
-            echo "checked";
+          if (!isset($_POST["sort"]) || $_POST["sort"] != "desc") {
+              echo "checked";
           }
         ?> >名前順
         <input type="radio" name="sort" value="desc" 
       <?php
-        if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
-          echo "checked";
-        } 
+        if (isset($_POST["sort"]) && $_POST["sort"] == "desc") {
+            echo "checked";
+        }
       ?> >時間順
       <input type="submit" value="並び替え">
       </form>
@@ -118,7 +122,7 @@ for ($i = 0;$i<count($name);$i++) {
             </tr>
         </thead>
         <tbody>
-          <?php foreach($stmt as $row): ?>
+          <?php foreach ($stmt as $row): ?>
             <tr>
                 <td data-label="内容" class="txt" onclick="alart"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
                 <td data-label="内容" class="txt"><?php htmlspecialchars(print($row['message']), ENT_QUOTES); ?></td>
