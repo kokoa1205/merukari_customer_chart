@@ -43,9 +43,16 @@ if (isset($_POST['a'])) {
 $count = 0;
 $name = array();
 foreach ($stmt as $target) {
-  array_push($name, $target['name']);
+  $name[$count]['name'] = $target['name'];
+  $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'],' '));
+  $count++;
 }
 var_dump($name);
+
+for ($i = 0;$i<count($name);$i++) {
+  echo $name[$i]['name'];
+  echo $name[$i]['crated'];
+}
 // echo $stmt[0];
 ?>
 <!DOCTYPE html>
