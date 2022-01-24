@@ -40,7 +40,18 @@ if (isset($_POST['a'])) {
 
 
 // 下に書いてもいいけどstmtを被らせないようにする
-
+$count = 0;
+foreach ($stmt as $base) {
+  foreach ($stmt as $target) {
+    echo $target->name;
+    if ($count = 0) {
+      break;
+    }
+  }
+  if ($count = 0) {
+    break;
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
