@@ -41,7 +41,13 @@ if (isset($_POST['a'])) {
 
 // 下に書いてもいいけどstmtを被らせないようにする
 $count = 0;
-var_dump($stmt);
+foreach ($stmt as $target) {
+  foreach($stmt as $base) {
+    if ($target['name'] == $base['name']) {
+      echo '一緒';
+    }
+  }
+}
 // echo $stmt[0];
 ?>
 <!DOCTYPE html>
