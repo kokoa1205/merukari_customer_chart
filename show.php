@@ -21,7 +21,7 @@ if (!empty($_SESSION['list']['delete'])) {
     print($_SESSION['list']['delete']);
 }
 
-$sql = "SELECT * FROM merukari_member_second ORDER BY created desc";
+$sql = "SELECT * FROM merukari_member ORDER BY created desc";
 if (isset($_POST["sort"]) && $_POST["sort"] == "desc") {
     //降順に並び替えるSQL文に変更
     $sql = str_replace('name', '', $sql);
@@ -40,6 +40,36 @@ if (isset($_POST['a'])) {
 
 
 // 下に書いてもいいけどstmtを被らせないようにする
+$count = 0;
+$name = array();
+foreach ($stmt as $target) {
+    $name[$count]['id'] = $target['id'];
+    $name[$count]['name'] = $target['name'];
+    $name[$count]['message'] = $target['message'];
+    $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'], ' '));
+    $count++;
+}
+// var_dump($name);
+$delete_index = array();
+for ($i = 0;$i<count($name);$i++) {
+    for ($j = $i+1;$j<count($name);$j++) {
+        if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$j]['message']) {
+            try {
+                $delete = "DELETE FROM merukari_member WHERE id = :id";
+                $delete_stmt = $db->prepare($delete);
+                $delete_params = array(':id' => $name[$j]['id']);
+                $delete_stmt->execute($delete_params);
+            } catch (Exception $ex) {
+            }
+      
+            $delete_index[$delete_count] = $j;
+            echo $name[$j]['name'];
+            echo $name[$j]['created'];
+            echo '|';
+            $delete_count++;
+        }
+    }
+}
 
 // echo $stmt[0];
 ?>
