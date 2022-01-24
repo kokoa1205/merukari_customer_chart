@@ -21,7 +21,7 @@ if(!empty($_SESSION['list']['delete'])) {
   print($_SESSION['list']['delete']);
 }
 
-$sql = "SELECT * FROM merukari_member ORDER BY name";
+$sql = "SELECT * FROM merukari_member ORDER BY created";
 if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
   //降順に並び替えるSQL文に変更
   $sql = str_replace('name', '', $sql);
@@ -62,18 +62,14 @@ if (isset($_POST['a'])) {
       <input type="button" value="すべて表示" id="button2">
 
       <form method="post">
-              <!-- 昇順を指定するラジオボタン -->
         <input type="radio" name="sort" value="asc" 
         <?php
-          //降順に指定されていない時はチェックする
           if( !isset($_POST["sort"]) || $_POST["sort"] != "desc"){
             echo "checked";
           }
         ?> >名前順
-        <!-- 降順を指定するラジオボタン -->
         <input type="radio" name="sort" value="desc" 
       <?php
-        //降順に指定されている時はチェックする
         if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
           echo "checked";
         } 
