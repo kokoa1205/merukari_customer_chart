@@ -60,7 +60,9 @@ for ($i = 0;$i<count($name);$i++) {
       echo $name[$j]['name'];
       echo $name[$j]['created'];
       echo '|';
+      break;
     }
+    break;
   }
 }
 // echo $stmt[0];
