@@ -43,7 +43,7 @@ if (isset($_POST['a'])) {
 $count = 0;
 foreach ($stmt as $base) {
   foreach ($stmt as $target) {
-    echo $target->name;
+    echo $target['name'];
     if ($count = 0) {
       break;
     }
