@@ -50,7 +50,8 @@ foreach ($stmt as $target) {
     $count++;
 }
 // var_dump($name);
-echo date('yyyy-mm-dd', strtotime( "2021-10-2 -1 day"));
+echo date('y-m-d', strtotime( "2021-10-2 -1 day"));
+echo date('y-m-d', strtotime( $name[0]['created'] . " -1 day"));
 $delete_index = array();
 for ($i = 0;$i<count($name);$i++) {
     for ($j = $i+1;$j<count($name);$j++) {
