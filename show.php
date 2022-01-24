@@ -43,7 +43,7 @@ if (isset($_POST['a'])) {
 $count = 0;
 var_dump($stmt);
 echo '-------------------';
-echo $stmt[0];
+// echo $stmt[0];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
