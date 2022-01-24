@@ -53,8 +53,8 @@ foreach ($stmt as $target) {
 for ($i = 0;$i<count($name);$i++) {
   for ($j = 1;$j<count($name);$j++) {
     if ($name[$i]['name'] == $name[$j]['name'] && $name[$j]['created'] == $name[$j]['created'] ) {
-      echo $name[$i]['id'];
-      echo $name[$i]['name'];
+      echo $name[$j]['id'];
+      echo $name[$j]['name'];
     }
   }
 }
