@@ -41,7 +41,7 @@ if (isset($_POST['a'])) {
 
 // 下に書いてもいいけどstmtを被らせないようにする
 $count = 0;
-var_dump($stmt);
+var_dump($stmt['queryString']);
 echo '-------------------';
 // echo $stmt[0];
 ?>
