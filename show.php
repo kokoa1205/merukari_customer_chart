@@ -50,6 +50,7 @@ foreach ($stmt as $target) {
   $count++;
 }
 // var_dump($name);
+
 // for ($i = 0;$i<count($name);$i++) {
 //   for ($j = 1;$j<count($name);$j++) {
 //     if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$i]['message']) {
