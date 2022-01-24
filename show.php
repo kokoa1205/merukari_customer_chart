@@ -24,8 +24,8 @@ if(!empty($_SESSION['list']['delete'])) {
 $sql = "SELECT * FROM merukari_member ORDER BY created desc";
 if( isset($_POST["sort"]) && $_POST["sort"] == "desc"){
   //降順に並び替えるSQL文に変更
-  $sql = str_replace('created', '', $sql);
-  $sql = $sql . " name";
+  $sql = str_replace('name', '', $sql);
+  $sql = $sql . " created";
 }
 $row_count = [];
 $stmt = $db->query($sql);
