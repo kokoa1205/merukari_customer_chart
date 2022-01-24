@@ -51,23 +51,22 @@ foreach ($stmt as $target) {
 }
 // var_dump($name);
 
-// for ($i = 0;$i<count($name);$i++) {
-//   for ($j = 1;$j<count($name);$j++) {
-//     if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$i]['message']) {
-//       // $delete = "DELETE FROM merukari_member WHERE id = :id";
-//       // $delete_stmt = $db->prepare($delete);
-//       // $delete_params = array(':id' => $_SESSION['list']['delete']);
-//       // $delete_stmt->execute($delete_params);
-//       echo $name[$j]['name'];
-//       echo $name[$j]['created'];
-//       echo '|';
-//       break;
-//     }
-//     break;
-//   }
-// }
-if ($name[0]['name'] == $name[1]['name']) {
-  echo 'same';
+for ($i = 0;$i<count($name);$i++) {
+  echo $name[$i]['name'];
+  for ($j = 1;$j<count($name);$j++) {
+    echo $name[$j]['name'];
+    if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$i]['message']) {
+      // $delete = "DELETE FROM merukari_member WHERE id = :id";
+      // $delete_stmt = $db->prepare($delete);
+      // $delete_params = array(':id' => $_SESSION['list']['delete']);
+      // $delete_stmt->execute($delete_params);
+      echo $name[$j]['name'];
+      echo $name[$j]['created'];
+      echo '|';
+      break;
+    }
+    break;
+  }
 }
 // echo $stmt[0];
 ?>
