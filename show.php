@@ -40,16 +40,16 @@ if (isset($_POST['a'])) {
 
 
 // 下に書いてもいいけどstmtを被らせないようにする
-$count = 0;
-$name = array();
-foreach ($stmt as $target) {
-    $name[$count]['id'] = $target['id'];
-    $name[$count]['name'] = $target['name'];
-    $name[$count]['message'] = $target['message'];
-    $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'], ' '));
-    $count++;
-}
-// var_dump($name);
+// $count = 0;
+// $name = array();
+// foreach ($stmt as $target) {
+//     $name[$count]['id'] = $target['id'];
+//     $name[$count]['name'] = $target['name'];
+//     $name[$count]['message'] = $target['message'];
+//     $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'], ' '));
+//     $count++;
+// }
+// // var_dump($name);
 // echo date('y-m-d', strtotime( "2021-10-2 -1 day"));
 // echo date('y-m-d', strtotime( $name[0]['created'] . " -1 day"));
 // $delete_index = array();
