@@ -43,15 +43,20 @@ if (isset($_POST['a'])) {
 $count = 0;
 $name = array();
 foreach ($stmt as $target) {
+  $name[$count]['id'] = $target['id'];
   $name[$count]['name'] = $target['name'];
   $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'],' '));
   $count++;
 }
-var_dump($name);
+// var_dump($name);
 
 for ($i = 0;$i<count($name);$i++) {
-  echo $name[$i]['name'];
-  echo $name[$i]['crated'];
+  for ($j = 1;$j<count($name);$j++) {
+    if ($name[$i]['name'] == $name[$j]['name'] && $name[$j]['created'] == $name[$j]['created'] ) {
+      echo $name[$i]['id'];
+      echo $name[$i]['name'];
+    }
+  }
 }
 // echo $stmt[0];
 ?>
