@@ -55,7 +55,7 @@ echo date('y-m-d', strtotime( $name[0]['created'] . " -1 day"));
 $delete_index = array();
 for ($i = 0;$i<count($name);$i++) {
     for ($j = $i+1;$j<count($name);$j++) {
-        if ($name[$i]['name'] == $name[$j]['name'] && date('y-m-d', strtotime( $name[$i]['created'] . " 2 day")) == date('y-m-d', strtotime( $name[$j]['created'] . " -1 day")) && $name[$i]['message'] == $name[$j]['message']) {
+        if ($name[$i]['name'] == $name[$j]['name'] && date('y-m-d', strtotime( $name[$i]['created'] . " 2 day")) == date('y-m-d', strtotime( $name[$j]['created'] . " 1 day")) && $name[$i]['message'] == $name[$j]['message']) {
             // try {
             //     $delete = "DELETE FROM merukari_member WHERE id = :id";
             //     $delete_stmt = $db->prepare($delete);
