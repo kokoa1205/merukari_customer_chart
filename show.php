@@ -41,19 +41,7 @@ if (isset($_POST['a'])) {
 
 // 下に書いてもいいけどstmtを被らせないようにする
 $count = 0;
-foreach ($stmt as $base) {
-    echo $base['name'];
-    foreach($stmt as $target) {
-      echo $target['name'];
-      if ($base == $target) {
-        echo 'same';
-        break;
-      }
-    }
-    if ($count == 0) {
-      break;
-    }
-}
+var_dump($stmt);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
