@@ -57,7 +57,7 @@ for ($i = 0;$i<count($name);$i++) {
             try {
                 $delete = "DELETE FROM merukari_member_second WHERE id = :id";
                 $delete_stmt = $db->prepare($delete);
-                $delete_params = array(':id' => $name['id']);
+                $delete_params = array(':id' => $name[$j]['id']);
                 $delete_stmt->execute($delete_params);
             } catch (Exception $ex) {
             }
