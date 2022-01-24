@@ -50,28 +50,28 @@ foreach ($stmt as $target) {
     $count++;
 }
 // var_dump($name);
-echo date('y-m-d', strtotime( "2021-10-2 -1 day"));
-echo date('y-m-d', strtotime( $name[0]['created'] . " -1 day"));
-$delete_index = array();
-for ($i = 0;$i<count($name);$i++) {
-    for ($j = $i+1;$j<count($name);$j++) {
-        if ($name[$i]['name'] == $name[$j]['name'] && strtotime($name[$i]['created']) == date('y-m-d', strtotime( $name[$j]['created'] . " -1 day")) && $name[$i]['message'] == $name[$j]['message']) {
-            // try {
-            //     $delete = "DELETE FROM merukari_member WHERE id = :id";
-            //     $delete_stmt = $db->prepare($delete);
-            //     $delete_params = array(':id' => $name[$j]['id']);
-            //     $delete_stmt->execute($delete_params);
-            // } catch (Exception $ex) {
-            // }
+// echo date('y-m-d', strtotime( "2021-10-2 -1 day"));
+// echo date('y-m-d', strtotime( $name[0]['created'] . " -1 day"));
+// $delete_index = array();
+// for ($i = 0;$i<count($name);$i++) {
+//     for ($j = $i+1;$j<count($name);$j++) {
+//         if ($name[$i]['name'] == $name[$j]['name'] && strtotime($name[$i]['created']) == date('y-m-d', strtotime( $name[$j]['created'] . " -1 day")) && $name[$i]['message'] == $name[$j]['message']) {
+//             // try {
+//             //     $delete = "DELETE FROM merukari_member WHERE id = :id";
+//             //     $delete_stmt = $db->prepare($delete);
+//             //     $delete_params = array(':id' => $name[$j]['id']);
+//             //     $delete_stmt->execute($delete_params);
+//             // } catch (Exception $ex) {
+//             // }
       
-            $delete_index[$delete_count] = $j;
-            echo $name[$j]['name'];
-            echo $name[$j]['created'];
-            echo '|';
-            $delete_count++;
-        }
-    }
-}
+//             $delete_index[$delete_count] = $j;
+//             echo $name[$j]['name'];
+//             echo $name[$j]['created'];
+//             echo '|';
+//             $delete_count++;
+//         }
+//     }
+// }
 
 // echo $stmt[0];
 ?>
