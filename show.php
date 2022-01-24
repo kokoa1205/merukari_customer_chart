@@ -49,7 +49,6 @@ foreach ($stmt as $target) {
   $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'],' '));
   $count++;
 }
-// var_dump($name);
 
 for ($i = 0;$i<count($name);$i++) {
   for ($j = 1;$j<count($name);$j++) {
@@ -58,9 +57,9 @@ for ($i = 0;$i<count($name);$i++) {
       // $delete_stmt = $db->prepare($delete);
       // $delete_params = array(':id' => $_SESSION['list']['delete']);
       // $delete_stmt->execute($delete_params);
-      echo $name[$j]['id'];
       echo $name[$j]['name'];
       echo $name[$j]['created'];
+      echo '|';
     }
   }
 }
