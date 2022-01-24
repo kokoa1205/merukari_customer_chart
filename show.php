@@ -60,6 +60,7 @@ for ($i = 0;$i<count($name);$i++) {
       // $delete_stmt->execute($delete_params);
       echo $name[$j]['id'];
       echo $name[$j]['name'];
+      echo $name[$j]['created'];
     }
   }
 }
