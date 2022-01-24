@@ -50,7 +50,7 @@ foreach ($stmt as $target) {
   $count++;
 }
 // var_dump($name);
-
+$delete_index = array();
 for ($i = 0;$i<count($name);$i++) {
   for ($j = $i+1;$j<count($name);$j++) {
     if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$j]['message']) {
@@ -58,10 +58,15 @@ for ($i = 0;$i<count($name);$i++) {
       // $delete_stmt = $db->prepare($delete);
       // $delete_params = array(':id' => $_SESSION['list']['delete']);
       // $delete_stmt->execute($delete_params);
+      $delete_index[$delete_count] = $j;
       echo $name[$j]['name'];
       echo $name[$j]['created'];
       echo '|';
+      $delete_count++;
     }
+  }
+  for ($k = 0;$k <count($delete_index);$k++) {
+    unset($name[$delete_index]);
   }
 }
 // echo $stmt[0];
