@@ -41,7 +41,7 @@ if (isset($_POST['a'])) {
 
 // 下に書いてもいいけどstmtを被らせないようにする
 $count = 0;
-echo '-------------------';
+var_dump($stmt);
 // echo $stmt[0];
 ?>
 <!DOCTYPE html>
