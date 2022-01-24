@@ -43,6 +43,13 @@ if (isset($_POST['a'])) {
 $count = 0;
 foreach ($stmt as $base) {
     echo $base['name'];
+    foreach($stmt as $target) {
+      echo $target['name'];
+      if ($base == $target) {
+        echo 'same';
+        break;
+      }
+    }
     if ($count == 0) {
       break;
     }
