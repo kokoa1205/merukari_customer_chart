@@ -54,10 +54,10 @@ foreach ($stmt as $target) {
 for ($i = 0;$i<count($name);$i++) {
   for ($j = 1;$j<count($name);$j++) {
     if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$j]['message']) {
-      $delete = "DELETE FROM merukari_member WHERE id = :id";
-      $delete_stmt = $db->prepare($delete);
-      $delete_params = array(':id' => $_SESSION['list']['delete']);
-      $delete_stmt->execute($delete_params);
+      // $delete = "DELETE FROM merukari_member WHERE id = :id";
+      // $delete_stmt = $db->prepare($delete);
+      // $delete_params = array(':id' => $_SESSION['list']['delete']);
+      // $delete_stmt->execute($delete_params);
       echo $name[$j]['id'];
       echo $name[$j]['name'];
     }
