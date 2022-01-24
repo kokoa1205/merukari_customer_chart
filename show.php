@@ -53,7 +53,7 @@ foreach ($stmt as $target) {
 
 for ($i = 0;$i<count($name);$i++) {
   for ($j = 1;$j<count($name);$j++) {
-    if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created'] && $name[$i]['message'] == $name[$j]['message']) {
+    if ($name[$i]['name'] == $name[$j]['name'] && $name[$i]['created'] == $name[$j]['created']) {
       // $delete = "DELETE FROM merukari_member WHERE id = :id";
       // $delete_stmt = $db->prepare($delete);
       // $delete_params = array(':id' => $_SESSION['list']['delete']);
