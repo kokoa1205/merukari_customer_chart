@@ -45,6 +45,7 @@ $name = array();
 foreach ($stmt as $target) {
   $name[$count]['id'] = $target['id'];
   $name[$count]['name'] = $target['name'];
+  $name[$count]['message'] = $target['message'];
   $name[$count]['created'] = substr($target['created'], 0, strcspn($target['created'],' '));
   $count++;
 }
