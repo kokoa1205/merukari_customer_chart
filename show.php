@@ -67,8 +67,8 @@ for ($i = 0;$i<count($name);$i++) {
   }
   for ($k = 0;$k <count($delete_index);$k++) {
     unset($name[$delete_index[$k]]);
-    $name = array_values($name);
   }
+  $name = array_values($name);
 }
 // echo $stmt[0];
 ?>
