@@ -10,7 +10,7 @@
       $stmt = $db->prepare($sql);
       $params = array(':name' => $_POST['name'], ':message' => $_POST['message'], ':created'=>date('Y-m-d H:i:s'));
       $stmt->execute($params);
-      echo '登録完了しましたあああああ';
+      // echo '登録完了しましたあああああ';
     } else {
       $sql = "INSERT INTO merukari_member (name, message,created) VALUES (:name, :message, :created)";
       $stmt = $db->prepare($sql);
