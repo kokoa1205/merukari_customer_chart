@@ -139,14 +139,14 @@ echo $all_user_count;
         <tbody>
           <!-- ページネーション -->
           <?php
-          //オブジェクトを生成
-          $pageing = new Paging();
-          //1ページ毎の表示数を設定
-          $pageing -> count = 5;
-          //全体の件数を設定しhtmlを生成
-          $pageing -> setHtml(47);
-          //ページングクラスを表示
-          echo $pageing -> html;
+          // //オブジェクトを生成
+          // $pageing = new Paging();
+          // //1ページ毎の表示数を設定
+          // $pageing -> count = 5;
+          // //全体の件数を設定しhtmlを生成
+          // $pageing -> setHtml(47);
+          // //ページングクラスを表示
+          // echo $pageing -> html;
           ?>
           <?php foreach ($stmt as $row): ?>
             <tr>
