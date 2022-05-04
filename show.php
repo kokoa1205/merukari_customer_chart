@@ -8,15 +8,16 @@ require('show_function.php');
 date_default_timezone_set('Asia/Tokyo');
 
 if (isset($_GET['page'])) {
-  $page_id = $_GET['page'];
+    $page_id = $_GET['page'];
 } else {
-  $page_id = 1;
+    $page_id = 1;
 }
 $one_page_posts = 10;
 $limit_start_count = $page_id * $one_page_posts - $one_page_posts;
 
 // 全ユーザーの件数を取得
 $all_users_count = get_all_user_count();
+
 
 if (!empty($_SESSION['list']['id'])) {
     $update = "UPDATE merukari_member SET created = :created WHERE id = :id";
@@ -40,6 +41,14 @@ if (isset($_POST["sort"]) && $_POST["sort"] == "desc") {
     //降順に並び替えるSQL文に変更
     $sql = str_replace('name', '', $sql);
     $sql = $sql . " created";
+}
+
+if (isset($_POST['reset'])) {
+  unset($_POST['name']);
+}
+
+if (isset($_POST['search'])) {
+  $sql = "SELECT * FROM merukari_member where name =  '" .$_POST['name']. "' ORDER BY created desc limit ".$limit_start_count." , ".$one_page_posts;
 }
 $row_count = [];
 $stmt = $db->query($sql);
@@ -107,11 +116,10 @@ if (isset($_POST['a'])) {
 <body>
     <p><a href="insert.php" class="show">入力画面</a></p>
     <div class="search">
-      <input type="text" id="search" placeholder="検索ワード"> 
-      <input type="button" value="絞り込む" id="button"> 
-      <input type="button" value="すべて表示" id="button2">
-
-      <form method="post">
+    <form method="post" action="show.php">
+      <input type="text" name="name" placeholder="検索ワード"> 
+      <input type="submit" value="絞り込む" id="button" name="search"> 
+      <input type="submit" value="すべて表示" id="button2" name="reset">
         <input type="radio" name="sort" value="asc" 
         <?php
           if (!isset($_POST["sort"]) || $_POST["sort"] != "desc") {
@@ -125,7 +133,7 @@ if (isset($_POST['a'])) {
         }
       ?> >時間順
       <input type="submit" value="並び替え">
-      </form>
+    </form>
 
     </div>
     <div class="time-search">
