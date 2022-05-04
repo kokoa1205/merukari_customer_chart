@@ -4,7 +4,7 @@ session_start();
 
 require('dbconnect.php');
 // require('page.php');
-require('show_function.php');
+// require('show_function.php');
 date_default_timezone_set('Asia/Tokyo');
 
 if (isset($_GET['page'])) {
@@ -47,8 +47,8 @@ if (isset($_POST['a'])) {
     echo $alert;
 }
 
-$all_user_count = get_all_user_count();
-echo $all_user_count;
+// $all_user_count = get_all_user_count();
+// echo $all_user_count;
 
 
 // 下に書いてもいいけどstmtを被らせないようにする
