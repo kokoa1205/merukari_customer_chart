@@ -3,7 +3,7 @@
 session_start();
 
 require('dbconnect.php');
-require('page.php');
+// require('page.php');
 require('show_function.php');
 date_default_timezone_set('Asia/Tokyo');
 
