@@ -3,7 +3,16 @@
 session_start();
 
 require('dbconnect.php');
+require('page.php');
+require('show_function.php');
 date_default_timezone_set('Asia/Tokyo');
+
+if (isset($_GET['page'])) {
+  $page_id = $_GET['page'];
+} else {
+  $page_id = 1;
+}
+$one_page_posts = 10;
 
 if (!empty($_SESSION['list']['id'])) {
     $update = "UPDATE merukari_member SET created = :created WHERE id = :id";
@@ -21,7 +30,7 @@ if (!empty($_SESSION['list']['delete'])) {
     print($_SESSION['list']['delete']);
 }
 
-$sql = "SELECT * FROM merukari_member ORDER BY created desc";
+$sql = "SELECT * FROM merukari_member ORDER BY created desc limit".$page_id." , ".$one_page_posts;
 if (isset($_POST["sort"]) && $_POST["sort"] == "desc") {
     //降順に並び替えるSQL文に変更
     $sql = str_replace('name', '', $sql);
@@ -37,6 +46,9 @@ if (isset($_POST['a'])) {
     $alert = "<script type='text/javascript'>alert('".$alert_message."');</script>";
     echo $alert;
 }
+
+$all_user_count = get_all_user_count();
+echo $all_user_count;
 
 
 // 下に書いてもいいけどstmtを被らせないようにする
@@ -125,6 +137,17 @@ if (isset($_POST['a'])) {
             </tr>
         </thead>
         <tbody>
+          <!-- ページネーション -->
+          <?php
+          //オブジェクトを生成
+          $pageing = new Paging();
+          //1ページ毎の表示数を設定
+          $pageing -> count = 5;
+          //全体の件数を設定しhtmlを生成
+          $pageing -> setHtml(47);
+          //ページングクラスを表示
+          echo $pageing -> html;
+          ?>
           <?php foreach ($stmt as $row): ?>
             <tr>
                 <td data-label="内容" class="txt" onclick="alart"><?php htmlspecialchars(print($row['name']), ENT_QUOTES); ?></td>
